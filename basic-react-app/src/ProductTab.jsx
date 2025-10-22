@@ -8,7 +8,7 @@ function ProductTab(){
         <Product />
         <Product /> 
      </div>
-      )
+      );
     }
 
 export default ProductTab;
