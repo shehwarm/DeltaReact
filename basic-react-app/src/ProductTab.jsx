@@ -4,9 +4,9 @@ import Product from "./Product.jsx";
 function ProductTab(){
       return (
      <div>
-        <Product />
-        <Product />
-        <Product /> 
+        <Product title="phone"/>
+        <Product title="headphones"/>
+        <Product title="tablet"/> 
      </div>
       );
     }
