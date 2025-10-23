@@ -1,6 +1,6 @@
 import "./Product.css";
 
-function Product({title}) {
+function Product({title, features}) {
     
     return(
         <div className="Product">
