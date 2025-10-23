@@ -6,6 +6,7 @@ function Product({title, features}) {
         <div className="Product">
             <h3>{title}</h3>
             <p>Product description</p>
+            <p>{features}</p>
         </div>
     );
 }
