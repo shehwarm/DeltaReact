@@ -1,9 +1,15 @@
-.Product{
-    border: 1px solid #ccc;
-    border-radius:24px;
-    margin-bottom: 5px;
-    padding:0 10px 0 10px;
-
-    
+.Product {
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  margin: 10px;
+  width: 200px;
+  height: 185px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.Product:hover {
+  transform: scale(1.05);
+}

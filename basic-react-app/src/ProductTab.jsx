@@ -2,13 +2,25 @@ import Product from "./Product.jsx";
 
 
 function ProductTab(){
-   let options = [<li>htech</li>, <li>durable</li>, <li>lightweight</li>];
+   let styles = {
+         display: "flex",
+         flexWrap :"wrap",
+         justifyContent: "center",
+         alignItems: "center",
+   };
       return (
-     <div>
-        <Product title="phone" price={4000}/>
-        <Product title="headphones" price={1000}/>
-        <Product title="tablet" price={2000}/> 
+      
+      <div>
+         <h2 style={{textAlign:"center"}}>Product List</h2>
+   
+        
+     <div style={styles}>
+        <Product title="Logitech Master" idx={0} />
+        <Product title="headphones" idx={1} />
+        <Product title="tablet Pro" idx={2} /> 
+        <Product title="Iphone cable"idx={3} /> 
      </div>
+       </div>
       );
     }
 
