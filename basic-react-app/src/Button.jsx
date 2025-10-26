@@ -1,7 +1,8 @@
-function printHello(){
+function handleClick(event){
     console.log("Hello from Button component");
+    console.log(event);
 }
-function printBye(){
+function handleMouseOver(){
     console.log("Bye from Button component");
 }
 function handleDbClicked(){
@@ -10,8 +11,8 @@ function handleDbClicked(){
 export default function Button(){
     return (
         <div>
-        <button onClick={printHello}>Click me</button>
-        <p onMouseOver={printBye}>nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+        <button onClick={handleClick}>Click me</button>
+        <p onMouseOver={handleMouseOver}>nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
         <button onDoubleClick={handleDbClicked}>double click me</button>
         </div>
     );
