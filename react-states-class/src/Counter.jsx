@@ -5,7 +5,12 @@ export default function Counter() {
   console.log("Counter rendered");
 
   const incCount = () => {
-    setCount(count + 1);
+    setCount((currCount) => {
+      return currCount + 1;
+    });
+    setCount((currCount) => {
+      return currCount + 1;
+    });
   };
 
   return (
@@ -15,3 +20,4 @@ export default function Counter() {
     </div>
   );
 }
+ 
