@@ -5,7 +5,7 @@ import LikeButton from './LikeButton.jsx';
 function App() {
   return (
     <>
-      <Counter />
+      <p>States in React</p>
 
       <LikeButton />
     </>
