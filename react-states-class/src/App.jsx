@@ -1,15 +1,13 @@
 import './App.css';
-import Counter from './Counter.jsx';
-import LikeButton from './LikeButton.jsx';
+import LudoBoard from './LudoBoard';
 
 function App() {
-  return (
-    <>
-      <p>States in React</p>
+  return <>
+   
+    <LudoBoard />
 
-      <Counter />
-    </>
-  );
+  </>;
+ 
 }
 
 export default App;

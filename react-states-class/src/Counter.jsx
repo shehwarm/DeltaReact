@@ -6,7 +6,7 @@ function init() {
 }
 
 export default function Counter() {
-  const [count, setCount] = useState(init());
+  const [count, setCount] = useState(init);
   console.log("Counter rendered");
 
   const incCount = () => {
