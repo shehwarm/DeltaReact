@@ -5,7 +5,7 @@ export default function LudoBoard(){
 
     let updateBlue = () => {
         setMoves((prevMoves) => {
-            return {...prevMoves, yellow: prevMoves.yellow + 1};
+            return {...prevMoves, blue: prevMoves.blue + 1};
         });
     };
      let updateYellow = () => {
