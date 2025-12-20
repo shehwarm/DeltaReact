@@ -14,7 +14,10 @@ export default function TodoList(){
         setNewTodo(event.target.value);
     }
 
-
+    let deleteTodo = (id) => {
+        const updatedTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(updatedTodos);
+    };
     return (
         <div> 
             <input 
@@ -31,7 +34,11 @@ export default function TodoList(){
             <ul>
                 {
                     todos.map((todo) => (
-                        <li key={todo.id}>{todo.task}</li>
+                        <li key={todo.id}>
+                           <span> {todo.task}</span>
+                           &nbsp;
+                           <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                        </li>
                     ))
                 }
             </ul>
