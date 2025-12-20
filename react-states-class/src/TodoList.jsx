@@ -40,6 +40,19 @@ export default function TodoList(){
         setTodos(updatedTodos);
     };
 
+    let isDone = (id) => {
+        const updatedTodos = todos.map((todo) => {
+            if (todo.id === id) {
+                return {
+                    ...todo,
+                    isDone: !todo.isDone
+                };
+            }
+            return todo;
+        });
+        setTodos(updatedTodos);
+    };
+
     return (
         <div> 
             <input 
@@ -57,11 +70,17 @@ export default function TodoList(){
                 {
                     todos.map((todo) => (
                         <li key={todo.id}>
-                           <span> {todo.task}</span>
+                            <span style={{ 
+                                textDecoration: todo.isDone ? "line-through" : "none",
+                                color: todo.isDone ? "gray" : "black"
+                                 }}>
+                             {todo.task}
+                            </span>
                            &nbsp;
                            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                            <button onClick={() => upperCaseOne(todo.id)}>Uppercase One</button>
-                       
+                           <button onClick={() => isDone(todo.id)}>Mark as Done</button>
+
                         </li>
                     ))
                 }
