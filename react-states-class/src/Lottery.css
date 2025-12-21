@@ -2,3 +2,13 @@
     border: 1px solid rgb(211, 89, 109);
     border-radius: 14px;
 }
+
+.buy-ticket-btn{
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: rgb(136, 119, 122);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
