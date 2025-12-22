@@ -5,7 +5,7 @@ import { sum } from './helper';
 function App() {
 
    let winCondition = (ticket) => {
-     return sum(ticket) === 15;
+     return ticket[0] === 1;
    }
 
   return <>
