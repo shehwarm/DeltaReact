@@ -1,11 +1,13 @@
 import './App.css';
 import TodoList from './TodoList';
 import Lottery from './Lottery';
+import Ticket from './Ticket';
+import Lottery from './Lottery';
 
 function App() {
   return <>
    
-    <Lottery />
+    <Lottery n={3} winningSum={15} />
 
   </>;
  
