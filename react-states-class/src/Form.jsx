@@ -37,7 +37,7 @@ export default function Form() {
              id="fullName"
              name="fullName"
              />
-            <button>Submit</button>
+            
                <br></br>
                <br></br>
             <label htmlFor="username">Username</label>
@@ -49,7 +49,7 @@ export default function Form() {
              id="username"
              name="username"
              />
-            <button>Submit</button>
+           
 
              <br></br>
                <br></br>
