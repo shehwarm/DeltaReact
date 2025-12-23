@@ -1,16 +1,12 @@
 import './App.css';
-import Lottery from './Lottery';
-import { sum } from './helper';
+import Form from './Form.jsx';
+
 
 function App() {
 
-   let winCondition = (ticket) => {
-     return ticket[0] === 1;
-   }
-
   return <>
    
-    <Lottery n={3} winCondition={winCondition} />
+    <Form />
 
   </>;
  
