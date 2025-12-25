@@ -1,29 +1,17 @@
-import { useState } from "react";
-
-function init() {
-  console.log("Init function called");
-  return Math.random();
-}
+import { useState,useEffect } from "react"
 
 export default function Counter() {
-  const [count, setCount] = useState(init);
-  console.log("Counter rendered");
 
-  const incCount = () => {
-   // setCount((currCount) => {
-   //   return currCount + 1;
-   // });
-   // setCount((currCount) => {
-   //   return currCount + 1;
-    //});
-    setCount(1);
-  };
+ let [count,setCount]=useState(0);
+
+ useEffect(function printSomething(){
+    console.log("Component Mounted or Updated");
+ });
 
   return (
     <div>
-      <h3>Count = {count}</h3>
-      <button onClick={incCount}>Increase Count</button>
+      <h3> Count = {count}</h3>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
     </div>
-  );
-}
- 
+  )
+} 
