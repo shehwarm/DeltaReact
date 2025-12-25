@@ -15,7 +15,7 @@ let incCounty=()=>{
 
  useEffect(function printSomething(){
     console.log("Component Mounted or Updated");
- },[countx]);
+ },[]);
 
   return (
     <div>
