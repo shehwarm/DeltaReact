@@ -16,7 +16,14 @@ export default function CommentsForm({addNewComment}) {
         });
     };
 
+    let [isValid, SetIsValid] = useState(true);
+
     let handleSubmit = (event) => {
+        if(!formData.username) {
+            SetIsValid(false);
+            event.preventDefault();
+            return;
+        }
         addNewComment(formData);
         event.preventDefault();
         setFormData({
@@ -39,6 +46,7 @@ export default function CommentsForm({addNewComment}) {
                 id="username"
                 name="username"
                 />
+                {!isValid && <p style={{ color: "red" }}>Username cannot be Null</p>}
                 <br></br>
                 <br></br>
 
