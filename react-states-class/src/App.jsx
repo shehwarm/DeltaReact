@@ -1,15 +1,11 @@
 import './App.css';
 import Form from './Form.jsx';
-import Comments from './Comments.jsx';
+import Comment from './Comment.jsx';
 
 function App() {
 
   return <>
-   
-   
-    <Comments />
+    <Comment />
   </>;
- 
 }
-
 export default App;
