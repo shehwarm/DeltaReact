@@ -1,16 +1,30 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 
 export default function Joker(){
- let[joke, setJoke] = useState({});
 
-    const URL = "https://official-joke-api.appspot.com/random_joke";
+let[joke, setJoke] = useState({});
 
-const getNewJoke = async() =>{
+const URL = "https://official-joke-api.appspot.com/random_joke";
+
+   const getNewJoke = async() =>{
      let response = await fetch(URL);
      let data = await response.json();
+     setJoke({setup: data.setup, punchline: data.punchline})
+    };
+
+
+useEffect(()=>{
+    async function getFisrtJoke(){
+        let response = await fetch(URL);
+        let data = await response.json();
         console.log(data);
-        setJoke({setup: data.setup, punchline: data.punchline});
+         setJoke({setup: data.setup, punchline: data.punchline})
     }
+    getFisrtJoke();
+},[]);
+
+
+
 
     return (
         <div>
