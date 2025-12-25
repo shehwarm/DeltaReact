@@ -2,16 +2,27 @@ import { useState,useEffect } from "react"
 
 export default function Counter() {
 
- let [count,setCount]=useState(0);
+ let [countx,setCountx]=useState(0);
+let [county,setCounty]=useState(0);
+
+let incCountx=()=>{
+  setCountx(countx+1);
+}
+
+let incCounty=()=>{
+  setCounty(county+1);
+}
 
  useEffect(function printSomething(){
     console.log("Component Mounted or Updated");
- });
+ },[countx]);
 
   return (
     <div>
-      <h3> Count = {count}</h3>
-      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <h1>Count X: {countx}</h1>
+      <button onClick={incCountx}>Increment Count X</button>
+      <h1>Count Y: {county}</h1>
+      <button onClick={incCounty}>Increment Count Y</button>
     </div>
   )
 } 
