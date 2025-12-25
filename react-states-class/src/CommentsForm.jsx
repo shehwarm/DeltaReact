@@ -1,63 +1,62 @@
 import { useState } from "react";
+import {useFormik} from "formik";
+
+const validate = values => {
+    const errors = {};
+    if (!values.username) {
+        errors.username = "Username is required";
+    }
+    if (!values.comment) {
+        errors.comment = "Comment is required";
+    }
+    if (!values.rating) {
+        errors.rating = "Rating is required";
+    }
+    return errors;
+};
+
 
 export default function CommentsForm({addNewComment}) {
-    let [formData, setFormData] = useState({
-        username: "",
-        comment: "",
-        rating: ""
+    
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            comment: '',
+            rating: 5,
+        },
+        validate,
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        }
     });
 
-    let handleInputChange = (event) => { 
-        setFormData( (currData) => {
-            return {
-                ...currData,
-                [event.target.name]: event.target.value
-            };
-        });
-    };
-
-    let [isValid, SetIsValid] = useState(true);
-
-    let handleSubmit = (event) => {
-        if(!formData.username) {
-            SetIsValid(false);
-            event.preventDefault();
-            return;
-        }
-        addNewComment(formData);
-        event.preventDefault();
-        setFormData({
-            username: "",
-            comment: "",
-            rating: ""
-        });
-    };
 
     return (
         <div>
             <h2>Comments Section</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={formik.handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input 
                 placeholder="username" 
                 type="text" 
-                value={formData.username} 
-                onChange={handleInputChange} 
+                value={formik.values.username} 
+                onChange={formik.handleChange} 
                 id="username"
                 name="username"
                 />
-                {!isValid && <p style={{ color: "red" }}>Username cannot be Null</p>}
+                {formik.errors.username ? <div style={{color: 'red'}}>{formik.errors.username}</div> : null}
                 <br></br>
                 <br></br>
 
                 <label htmlFor="comment">Comment</label>
                 <textarea 
                 placeholder="comment here" 
-                value={formData.comment}
-                onChange={handleInputChange}
+                value={formik.values.comment}
+                onChange={formik.handleChange} 
                 id="comment"
                 name="comment"
                 >
+                    {formik.errors.comment ? <div style={{color: 'red'}}>{formik.errors.comment}</div> : null}
                 </textarea>
                 <br></br>
                 <br></br>
@@ -66,14 +65,15 @@ export default function CommentsForm({addNewComment}) {
                 <input 
                 placeholder="rating" 
                 type="number" min="1" max="5" 
-                value={formData.rating} 
-                onChange={handleInputChange}
+                value={formik.values.rating} 
+                onChange={formik.handleChange}
                 id="rating"
                 name="rating"
                 />
+                {formik.errors.rating ? <div style={{color: 'red'}}>{formik.errors.rating}</div> : null}
                 <br></br>
                 <br></br>
-                <button>Submit Comment</button>
+                <button type="submit">Submit Comment</button>
             </form>
         </div>
     );
